@@ -10,11 +10,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantStyles: Record<NonNullable<ButtonProps["variant"]>, string> = {
   accent:
-    "border border-transparent bg-accent text-black hover:border-white hover:bg-transparent hover:text-white",
+    "border border-transparent bg-accent text-parchment hover:border-accent hover:bg-transparent hover:text-parchment",
   outline:
-    "border border-[#2a2a2a] bg-transparent text-foreground hover:border-white hover:bg-transparent hover:text-white",
-  ghost: "bg-transparent text-foreground hover:bg-white/5 hover:text-white",
-  link: "bg-transparent px-0 text-accent hover:text-white",
+    "border border-[#222222] bg-transparent text-parchment hover:border-parchment hover:bg-transparent hover:text-parchment",
+  ghost: "bg-transparent text-parchment hover:bg-nocturn/10 hover:text-parchment",
+  link: "bg-transparent px-0 text-accent hover:text-parchment",
 };
 
 const sizeStyles: Record<NonNullable<ButtonProps["size"]>, string> = {

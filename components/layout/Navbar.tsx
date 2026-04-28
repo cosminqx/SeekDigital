@@ -31,12 +31,12 @@ export default function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-[70] border-b border-transparent transition-all duration-300",
-        isScrolled ? "border-[#1f1f1f] bg-black/80 backdrop-blur-md" : "bg-transparent",
+        isScrolled ? "border-[#222222] bg-black/80 backdrop-blur-md" : "bg-transparent",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-2" aria-label={siteConfig.name}>
-          <span className="font-display text-sm font-bold uppercase tracking-[0.24em] text-white sm:text-base">
+          <span className="font-display text-sm font-bold uppercase tracking-[0.24em] text-parchment sm:text-base">
             SEEK <span className="text-accent transition group-hover:opacity-80">•</span> DIGITAL
           </span>
         </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-[0.08em] text-muted transition hover:text-white"
+              className="text-sm font-medium tracking-[0.08em] text-muted transition hover:text-parchment"
             >
               {link.label}
             </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
           type="button"
           aria-label={isOpen ? "Închide meniul" : "Deschide meniul"}
           aria-expanded={isOpen}
-          className="inline-flex h-11 w-11 items-center justify-center border border-[#1f1f1f] text-white transition hover:border-white lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center border border-[#222222] text-parchment transition hover:border-parchment lg:hidden"
           onClick={() => setIsOpen((value) => !value)}
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -88,7 +88,7 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setIsOpen(false)}
                   aria-label="Închide meniul"
-                  className="inline-flex h-11 w-11 items-center justify-center border border-[#1f1f1f] text-white"
+                  className="inline-flex h-11 w-11 items-center justify-center border border-[#222222] text-parchment"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -105,7 +105,7 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="block border-b border-[#1f1f1f] py-4 font-display text-3xl font-bold uppercase tracking-[-0.03em] text-white"
+                        className="block border-b border-[#222222] py-4 font-display text-3xl font-bold uppercase tracking-[-0.03em] text-parchment"
                       >
                         {link.label}
                       </Link>

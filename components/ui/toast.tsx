@@ -50,11 +50,11 @@ export function Toaster() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.28 }}
-            className="rounded-sm border border-[#1f1f1f] bg-card px-4 py-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+            className="rounded-sm border border-[#222222] bg-card px-4 py-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
             role="status"
             aria-live="polite"
           >
-            <p className="text-sm font-semibold text-white">{item.title}</p>
+            <p className="text-sm font-semibold text-parchment">{item.title}</p>
             {item.description ? <p className="mt-1 text-sm text-muted">{item.description}</p> : null}
           </motion.div>
         ))}

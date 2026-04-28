@@ -14,7 +14,7 @@ export default function SectionHeader({ eyebrow, title, subtitle, align = "left"
         <p className="font-display text-xs uppercase tracking-[0.28em] text-accent">{eyebrow}</p>
       ) : null}
       <div className="space-y-4">
-        <h2 className="font-display text-4xl font-bold uppercase tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
+        <h2 className="font-display text-4xl font-bold uppercase tracking-[-0.03em] text-parchment sm:text-5xl lg:text-6xl">
           {title}
         </h2>
         {subtitle ? <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">{subtitle}</p> : null}

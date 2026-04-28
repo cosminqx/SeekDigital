@@ -36,7 +36,7 @@ export default function AnimatedCounter({ target, suffix = "", prefix = "", dura
   }, [duration, isInView, target]);
 
   return (
-    <motion.span ref={ref} className="font-display text-2xl font-bold uppercase tracking-[-0.03em] text-white">
+    <motion.span ref={ref} className="font-display text-2xl font-bold uppercase tracking-[-0.03em] text-parchment">
       {prefix}
       {isInView ? value : 0}
       {suffix}

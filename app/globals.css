@@ -1,12 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --surface: #111111;
+  /* Brand — Dark Editorial Identity */
+  --color-nocturn: #161925;
+  --color-obsidian: #080808;
+  --color-charcoal: #111111;
+  --color-parchment: #E8E4DC;
+  --color-graphite: #666666;
+  --color-cream: #F5F2EB;
+  --color-border: #222222;
+
+  /* Semantic aliases */
+  --bg-primary: var(--color-obsidian);
+  --bg-surface: var(--color-charcoal);
+  --bg-card: #161616;
+  --text-primary: var(--color-parchment);
+  --text-muted: var(--color-graphite);
+  --border-default: var(--color-border);
+  --accent: var(--color-nocturn);
+
+  /* Legacy support for existing components */
+  --background: var(--color-obsidian);
+  --foreground: var(--color-parchment);
+  --surface: var(--color-charcoal);
   --card: #161616;
-  --muted: #888888;
-  --accent: #c8ff00;
+  --muted: var(--color-graphite);
 }
 
 @theme inline {
@@ -16,8 +34,16 @@
   --color-card: var(--card);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
-  --font-display: var(--font-syne);
-  --font-body: var(--font-dm-sans);
+  --color-nocturn: var(--color-nocturn);
+  --color-obsidian: var(--color-obsidian);
+  --color-charcoal: var(--color-charcoal);
+  --color-parchment: var(--color-parchment);
+  --color-graphite: var(--color-graphite);
+  --color-cream: var(--color-cream);
+  --color-border: var(--color-border);
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-dm-mono);
+  --font-accent: 'Cormorant Garamond', serif;
 }
 
 html {
@@ -28,26 +54,150 @@ body {
   min-height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-body), monospace;
 }
 
 * {
-  border-color: #1f1f1f;
+  border-color: var(--color-border);
 }
 
 ::selection {
   background: var(--accent);
-  color: #000;
+  color: var(--color-obsidian);
 }
 
+/* Typography Utility Classes */
+.text-display-xl {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+
+.text-display-lg {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.text-display-md {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.text-section {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.text-accent {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.text-body {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.text-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.text-nav {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.text-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Mobile typography overrides */
+@media (max-width: 767px) {
+  .text-display-xl {
+    font-size: 48px;
+  }
+
+  .text-display-lg {
+    font-size: 36px;
+  }
+
+  .text-display-md {
+    font-size: 32px;
+  }
+}
+
+/* Design System Utilities */
 .grain-overlay {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.34'/%3E%3C/svg%3E");
   opacity: 0.03;
   mix-blend-mode: soft-light;
 }
 
+/* Semantic Color Utilities */
+.bg-nocturn {
+  background-color: var(--color-nocturn);
+}
+
+.bg-obsidian {
+  background-color: var(--color-obsidian);
+}
+
+.bg-charcoal {
+  background-color: var(--color-charcoal);
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+.text-nocturn {
+  color: var(--color-nocturn);
+}
+
+.text-parchment {
+  color: var(--color-parchment);
+}
+
+.text-graphite {
+  color: var(--color-graphite);
+}
+
+.text-cream {
+  color: var(--color-cream);
+}
+
+.border-nocturn {
+  border-color: var(--color-nocturn);
+}
+
 .cursor-dot {
-  box-shadow: 0 0 30px rgba(200, 255, 0, 0.18);
+  box-shadow: 0 0 30px rgba(22, 25, 37, 0.18);
 }
 
 .marquee-track {
@@ -95,106 +245,4 @@ body {
   animation-delay: -11s;
 }
 
-.text-balance {
-  text-wrap: balance;
-}
-@import "tailwindcss";
 
-:root {
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --surface: #111111;
-  --card: #161616;
-  --muted: #888888;
-  --accent: #c8ff00;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-card: var(--card);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --font-display: var(--font-syne);
-  --font-body: var(--font-dm-sans);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body), sans-serif;
-  min-height: 100%;
-}
-
-* {
-  border-color: #1f1f1f;
-}
-
-::selection {
-  background: var(--accent);
-  color: #000;
-}
-
-.grain-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.34'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  mix-blend-mode: soft-light;
-}
-
-.cursor-dot {
-  box-shadow: 0 0 30px rgba(200, 255, 0, 0.18);
-}
-
-.marquee-track {
-  animation: marquee 24s linear infinite;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes float-mesh {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  33% {
-    transform: translate3d(3%, -4%, 0) scale(1.05);
-  }
-
-  66% {
-    transform: translate3d(-2%, 3%, 0) scale(0.98);
-  }
-}
-
-.mesh-blob {
-  animation: float-mesh 16s ease-in-out infinite;
-}
-
-.mesh-blob-delay {
-  animation-delay: -6s;
-}
-
-.mesh-blob-delay-2 {
-  animation-delay: -11s;
-}
-
-.text-balance {
-  text-wrap: balance;
-}

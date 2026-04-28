@@ -47,8 +47,8 @@ function SplitHeadline({ text }: { text: string }) {
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-[#1f1f1f]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(200,255,0,0.12),_transparent_32%),radial-gradient(circle_at_75%_20%,_rgba(72,255,129,0.1),_transparent_26%),radial-gradient(circle_at_50%_80%,_rgba(255,255,255,0.06),_transparent_24%)]" />
+      <section className="relative overflow-hidden border-b border-[#222222]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(22,25,37,0.12),_transparent_32%),radial-gradient(circle_at_75%_20%,_rgba(72,255,129,0.1),_transparent_26%),radial-gradient(circle_at_50%_80%,_rgba(255,255,255,0.06),_transparent_24%)]" />
         <motion.div
           className="mesh-blob absolute -left-24 top-16 h-72 w-72 rounded-full bg-accent/10 blur-3xl"
           animate={{ x: [0, 32, -18, 0], y: [0, -18, 26, 0] }}
@@ -66,7 +66,7 @@ export default function HomePage() {
         />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-between px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:py-16">
-          <motion.div initial="hidden" animate="visible" variants={stagger} className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="grid gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div className="space-y-8">
               <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-3">
                 <Badge variant="accent">Iași, România</Badge>
@@ -75,7 +75,7 @@ export default function HomePage() {
 
               <motion.h1
                 variants={fadeInUp}
-                className="max-w-4xl font-display text-[clamp(3rem,7vw,5.25rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-white"
+                className="max-w-4xl font-display text-[clamp(3rem,7vw,5.25rem)] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-parchment"
               >
                 <SplitHeadline text="Digitalizăm" />
                 <SplitHeadline text="afacerea" />
@@ -96,15 +96,15 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div variants={fadeInUp} className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-sm border border-[#1f1f1f] bg-card p-5">
+                <div className="rounded-sm border border-[#222222] bg-card p-5">
                   <AnimatedCounter target={14} prefix="7–" suffix=" zile" />
                   <p className="mt-3 text-sm text-muted">livrare website</p>
                 </div>
-                <div className="rounded-sm border border-[#1f1f1f] bg-card p-5">
+                <div className="rounded-sm border border-[#222222] bg-card p-5">
                   <AnimatedCounter target={50} prefix="30–" suffix="%" />
                   <p className="mt-3 text-sm text-muted">prețuri mai mici față de agenții mari</p>
                 </div>
-                <div className="rounded-sm border border-[#1f1f1f] bg-card p-5">
+                <div className="rounded-sm border border-[#222222] bg-card p-5">
                   <AnimatedCounter target={100} suffix="%" />
                   <p className="mt-3 text-sm text-muted">ROI măsurabil, garantat prin contract</p>
                 </div>
@@ -112,25 +112,25 @@ export default function HomePage() {
             </div>
 
             <motion.aside variants={fadeInUp} className="space-y-6">
-              <div className="rounded-sm border border-[#1f1f1f] bg-card p-6 shadow-[0_0_0_1px_rgba(200,255,0,0.12)]">
+              <div className="rounded-sm border border-[#222222] bg-card p-6 shadow-[0_0_0_1px_rgba(22,25,37,0.12)]">
                 <p className="font-display text-xs uppercase tracking-[0.28em] text-accent">Boutique agency</p>
                 <div className="mt-4 space-y-3">
-                  <p className="font-display text-2xl font-bold uppercase tracking-[-0.03em] text-white">
+                  <p className="font-display text-2xl font-bold uppercase tracking-[-0.03em] text-parchment">
                     <span className="text-accent">SEEK</span> DIGITAL
                   </p>
                   <p className="text-sm leading-7 text-muted">
                     Lucrăm direct cu fondatorul Silviu Chiscareanu pentru proiecte care cresc în trafic, leads și venit.
                   </p>
                 </div>
-                <div className="mt-6 flex items-center gap-3 text-sm text-white">
+                <div className="mt-6 flex items-center gap-3 text-sm text-parchment">
                   <span className="h-2 w-2 rounded-full bg-accent" />
                   {siteConfig.tagline}
                 </div>
               </div>
 
-              <div className="rounded-sm border border-[#1f1f1f] bg-white/[0.03] p-6">
+              <div className="rounded-sm border border-[#222222] bg-white/[0.03] p-6">
                 <p className="text-xs uppercase tracking-[0.28em] text-muted">Focus</p>
-                <ul className="mt-4 space-y-3 text-sm text-white">
+                <ul className="mt-4 space-y-3 text-sm text-parchment">
                   {[
                     "Website-uri care convertesc",
                     "Campanii cu raportare clară",
@@ -174,18 +174,18 @@ export default function HomePage() {
         </div>
       </RevealSection>
 
-      <RevealSection className="border-y border-[#1f1f1f] bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
+      <RevealSection className="border-y border-[#222222] bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="De ce SEEK DIGITAL" title="Diferențiatori care contează" subtitle="Nu cumpăra mai multă agendă, cumpără un proces mai bun." />
           <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {differentiators.map((item) => (
-              <div key={item.number} className="relative overflow-hidden rounded-sm border border-[#1f1f1f] bg-card p-8 lg:p-10">
-                <p className="absolute -left-4 -top-8 select-none font-display text-[clamp(7rem,14vw,9rem)] font-bold uppercase leading-none tracking-[-0.03em] text-white/5">
+              <div key={item.number} className="relative overflow-hidden rounded-sm border border-[#222222] bg-card p-8 lg:p-10">
+                <p className="absolute -left-4 -top-8 select-none font-display text-[clamp(7rem,14vw,9rem)] font-bold uppercase leading-none tracking-[-0.03em] text-parchment/5">
                   {item.number}
                 </p>
                 <div className="relative z-10 max-w-xl space-y-4">
                   <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">{item.number}</p>
-                  <h3 className="font-display text-3xl font-bold uppercase tracking-[-0.03em] text-white">{item.title}</h3>
+                  <h3 className="font-display text-3xl font-bold uppercase tracking-[-0.03em] text-parchment">{item.title}</h3>
                   <p className="text-lg leading-8 text-muted">{item.description}</p>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function HomePage() {
         </div>
       </RevealSection>
 
-      <RevealSection className="border-y border-[#1f1f1f] bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
+      <RevealSection className="border-y border-[#222222] bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Proces" title="Cum lucrăm" subtitle="Un proces simplu, previzibil și ușor de urmărit de la brief până la lansare." />
           <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-6">
@@ -227,19 +227,19 @@ export default function HomePage() {
               <div
                 key={step.step}
                 className={cn(
-                  "rounded-sm border border-[#1f1f1f] bg-card p-6",
-                  index === 0 && "border-accent shadow-[0_0_0_1px_#C8FF00]",
+                  "rounded-sm border border-[#222222] bg-card p-6",
+                  index === 0 && "border-accent shadow-[0_0_0_1px_#161925]",
                 )}
               >
                 <div
                   className={cn(
                     "inline-flex h-12 w-12 items-center justify-center rounded-full border text-sm font-bold",
-                    index === 0 ? "border-accent bg-accent text-black" : "border-[#1f1f1f] text-white",
+                    index === 0 ? "border-accent bg-nocturn text-parchment" : "border-[#222222] text-parchment",
                   )}
                 >
                   {step.step}
                 </div>
-                <h3 className="mt-5 font-display text-2xl font-bold uppercase tracking-[-0.03em] text-white">{step.title}</h3>
+                <h3 className="mt-5 font-display text-2xl font-bold uppercase tracking-[-0.03em] text-parchment">{step.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-muted">{step.description}</p>
               </div>
             ))}
@@ -254,9 +254,9 @@ export default function HomePage() {
             <h2 className="font-display text-[clamp(2.5rem,6vw,4rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em]">
               Gata să creștem împreună?
             </h2>
-            <p className="text-lg leading-8 text-black/75">Primești o analiză gratuită a prezenței tale online în 24h.</p>
+            <p className="text-lg leading-8 text-parchment/75">Primești o analiză gratuită a prezenței tale online în 24h.</p>
           </div>
-          <Button asChild className="bg-black text-white hover:bg-white hover:text-black">
+          <Button asChild className="bg-nocturn text-parchment hover:bg-parchment hover:text-nocturn">
             <Link href="/contact">Contactează-ne acum</Link>
           </Button>
         </div>

@@ -12,7 +12,7 @@ import { contactSchema, type ContactFormValues } from "@/lib/validations";
 import { siteConfig, contactOptions } from "@/lib/site";
 
 const fieldClassName =
-  "w-full border border-[#1f1f1f] bg-white/[0.02] px-4 py-3 text-sm text-white outline-none transition placeholder:text-muted focus:border-accent";
+  "w-full border border-[#222222] bg-white/[0.02] px-4 py-3 text-sm text-parchment outline-none transition placeholder:text-muted focus:border-accent";
 
 export default function ContactPage() {
   const {
@@ -43,7 +43,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="border-b border-[#1f1f1f]">
+    <div className="border-b border-[#222222]">
       <RevealSection className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
         <SectionHeader
           eyebrow="Contact"
@@ -56,7 +56,7 @@ export default function ContactPage() {
         <RevealSection className="space-y-6">
           <Card className="p-6">
             <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">Date de contact</p>
-            <div className="mt-6 space-y-4 text-sm text-white">
+            <div className="mt-6 space-y-4 text-sm text-parchment">
               <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 transition hover:text-accent">
                 <Mail className="h-4 w-4 text-accent" /> {siteConfig.email}
               </a>
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 <MessageCircle className="h-4 w-4 text-accent" /> Scrie-ne pe WhatsApp
               </a>
             </div>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-[2px] border border-[#1f1f1f] px-3 py-2 text-xs uppercase tracking-[0.2em] text-muted">
+            <div className="mt-6 inline-flex items-center gap-2 rounded-[2px] border border-[#222222] px-3 py-2 text-xs uppercase tracking-[0.2em] text-muted">
               <span className="h-2 w-2 rounded-full bg-accent" /> Răspundem în maxim 24h
             </div>
           </Card>
@@ -82,7 +82,7 @@ export default function ContactPage() {
           </Card>
 
           <Card className="overflow-hidden p-0">
-            <div className="border-b border-[#1f1f1f] px-6 py-4">
+            <div className="border-b border-[#222222] px-6 py-4">
               <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">Google Maps</p>
             </div>
             <div className="flex min-h-[280px] items-center justify-center bg-[linear-gradient(135deg,#111111_0%,#171717_50%,#0f0f0f_100%)] px-6 text-center text-sm text-muted">
@@ -98,28 +98,28 @@ export default function ContactPage() {
         <RevealSection>
           <Card className="p-6 sm:p-8">
             <form className="space-y-5" onSubmit={handleSubmit(onSubmit)} noValidate>
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-2">
                 <label className="space-y-2">
-                  <span className="text-sm text-white">Nume complet *</span>
+                  <span className="text-sm text-parchment">Nume complet *</span>
                   <input className={fieldClassName} placeholder="Nume și prenume" {...register("fullName")} />
                   {errors.fullName ? <p className="text-sm text-red-400">{errors.fullName.message}</p> : null}
                 </label>
                 <label className="space-y-2">
-                  <span className="text-sm text-white">Email *</span>
+                  <span className="text-sm text-parchment">Email *</span>
                   <input className={fieldClassName} placeholder="contact@firma.ro" {...register("email")} />
                   {errors.email ? <p className="text-sm text-red-400">{errors.email.message}</p> : null}
                 </label>
               </div>
 
               <label className="block space-y-2">
-                <span className="text-sm text-white">Telefon</span>
+                <span className="text-sm text-parchment">Telefon</span>
                 <input className={fieldClassName} placeholder="07xx xxx xxx" {...register("phone")} />
                 {errors.phone ? <p className="text-sm text-red-400">{errors.phone.message}</p> : null}
               </label>
 
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-2">
                 <label className="space-y-2">
-                  <span className="text-sm text-white">Serviciu dorit *</span>
+                  <span className="text-sm text-parchment">Serviciu dorit *</span>
                   <select className={fieldClassName} {...register("service")}>
                     {contactOptions.services.map((service) => (
                       <option key={service}>{service}</option>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                   {errors.service ? <p className="text-sm text-red-400">{errors.service.message}</p> : null}
                 </label>
                 <label className="space-y-2">
-                  <span className="text-sm text-white">Buget estimat *</span>
+                  <span className="text-sm text-parchment">Buget estimat *</span>
                   <select className={fieldClassName} {...register("budget")}>
                     {contactOptions.budgets.map((budget) => (
                       <option key={budget}>{budget}</option>
@@ -139,7 +139,7 @@ export default function ContactPage() {
               </div>
 
               <label className="block space-y-2">
-                <span className="text-sm text-white">Mesaj *</span>
+                <span className="text-sm text-parchment">Mesaj *</span>
                 <textarea
                   className={`${fieldClassName} min-h-[160px] resize-none`}
                   placeholder="Spune-ne mai multe despre business-ul tău și obiectivele proiectului."
@@ -151,7 +151,7 @@ export default function ContactPage() {
               <label className="flex items-start gap-3 text-sm text-muted">
                 <input
                   type="checkbox"
-                  className="mt-1 h-4 w-4 rounded-[2px] border border-[#1f1f1f] bg-transparent text-accent focus:ring-0"
+                  className="mt-1 h-4 w-4 rounded-[2px] border border-[#222222] bg-transparent text-accent focus:ring-0"
                   {...register("consent")}
                 />
                 <span>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 {isSubmitting ? "Se trimite..." : "Trimite mesajul"}
               </Button>
 
-              <div className="flex items-center gap-3 border-t border-[#1f1f1f] pt-5 text-xs uppercase tracking-[0.18em] text-muted">
+              <div className="flex items-center gap-3 border-t border-[#222222] pt-5 text-xs uppercase tracking-[0.18em] text-muted">
                 <PhoneCall className="h-4 w-4 text-accent" />
                 Vei primi răspuns de la SEEK DIGITAL, nu de la un formular automat.
               </div>

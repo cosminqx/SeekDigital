@@ -22,7 +22,7 @@ const icons = [Globe, ShoppingBag, Target, BarChart2, Palette, Zap, ShoppingBag,
 
 export default function ServicesPage() {
   return (
-    <div className="border-b border-[#1f1f1f]">
+    <div className="border-b border-[#222222]">
       <RevealSection className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
         <SectionHeader
           eyebrow="Servicii"
@@ -40,14 +40,14 @@ export default function ServicesPage() {
               <RevealSection key={service.title}>
                 <Card className="overflow-hidden bg-card">
                   <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-                    <div className="border-b border-[#1f1f1f] p-8 lg:border-b-0 lg:border-r">
+                    <div className="border-b border-[#222222] p-8 lg:border-b-0 lg:border-r">
                       <div className="flex items-start justify-between gap-4">
-                        <div className="inline-flex h-14 w-14 items-center justify-center border border-[#1f1f1f] bg-white/5 text-accent">
+                        <div className="inline-flex h-14 w-14 items-center justify-center border border-[#222222] bg-white/5 text-accent">
                           <Icon className="h-6 w-6" />
                         </div>
                         <Badge variant="outline">{service.delivery}</Badge>
                       </div>
-                      <h2 className="mt-8 font-display text-3xl font-bold uppercase tracking-[-0.03em] text-white sm:text-4xl">
+                      <h2 className="mt-8 font-display text-3xl font-bold uppercase tracking-[-0.03em] text-parchment sm:text-4xl">
                         {service.title}
                       </h2>
                       <p className="mt-5 max-w-xl text-base leading-8 text-muted">{service.description}</p>
@@ -58,7 +58,7 @@ export default function ServicesPage() {
                     </div>
                     <div className="p-8">
                       <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">Ce livrăm</p>
-                      <ul className="mt-5 space-y-3 text-sm leading-7 text-white">
+                      <ul className="mt-5 space-y-3 text-sm leading-7 text-parchment">
                         {service.deliverables.map((item) => (
                           <li key={item} className="flex items-start gap-3">
                             <span className="mt-2 h-2 w-2 rounded-full bg-accent" />
@@ -67,7 +67,7 @@ export default function ServicesPage() {
                         ))}
                       </ul>
 
-                      <div className="mt-8 border-t border-[#1f1f1f] pt-6">
+                      <div className="mt-8 border-t border-[#222222] pt-6">
                         <Accordion type="single" collapsible>
                           <AccordionItem value={service.title}>
                             <AccordionTrigger>Ce include?</AccordionTrigger>

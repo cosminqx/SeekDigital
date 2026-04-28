@@ -34,10 +34,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative z-10 border-t border-[#1f1f1f] bg-background">
+    <footer className="relative z-10 border-t border-[#222222] bg-background">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr_1fr] lg:px-8 lg:py-20">
         <div className="space-y-4">
-          <p className="font-display text-2xl font-bold uppercase tracking-[0.18em] text-white">
+          <p className="font-display text-2xl font-bold uppercase tracking-[0.18em] text-parchment">
             SEEK <span className="text-accent">•</span> DIGITAL
           </p>
           <p className="max-w-sm text-sm leading-7 text-muted">
@@ -51,7 +51,7 @@ export default function Footer() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="inline-flex h-11 w-11 items-center justify-center border border-[#1f1f1f] text-white transition hover:border-accent hover:text-accent"
+                  className="inline-flex h-11 w-11 items-center justify-center border border-[#222222] text-parchment transition hover:border-accent hover:text-accent"
                   aria-label={item.label}
                 >
                   <Icon className="h-5 w-5" />
@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div>
           <p className="mb-4 font-display text-xs uppercase tracking-[0.24em] text-muted">Servicii</p>
-          <ul className="space-y-3 text-sm text-white">
+          <ul className="space-y-3 text-sm text-parchment">
             <li>
               <Link href="/servicii" className="transition hover:text-accent">
                 Website-uri
@@ -89,7 +89,7 @@ export default function Footer() {
 
         <div>
           <p className="mb-4 font-display text-xs uppercase tracking-[0.24em] text-muted">Pagini</p>
-          <ul className="space-y-3 text-sm text-white">
+          <ul className="space-y-3 text-sm text-parchment">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="transition hover:text-accent">
@@ -102,7 +102,7 @@ export default function Footer() {
 
         <div>
           <p className="mb-4 font-display text-xs uppercase tracking-[0.24em] text-muted">Contact</p>
-          <div className="space-y-3 text-sm text-white">
+          <div className="space-y-3 text-sm text-parchment">
             <p className="flex items-center gap-2 text-muted">
               <Mail className="h-4 w-4 text-accent" /> {siteConfig.email}
             </p>
@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[#1f1f1f] px-4 py-5 sm:px-6 lg:px-8">
+      <div className="border-t border-[#222222] px-4 py-5 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-xs uppercase tracking-[0.18em] text-muted lg:flex-row lg:items-center lg:justify-between">
           <p>© 2026 SEEK DIGITAL SRL · Iași, România · CUI: — · Politică de confidențialitate</p>
           <p>Brand tag: {siteConfig.tagline}</p>

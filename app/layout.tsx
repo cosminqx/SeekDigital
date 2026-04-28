@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Syne } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, DM_Mono } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import PageTransition from "@/components/layout/PageTransition";
@@ -8,14 +8,24 @@ import GrainOverlay from "@/components/common/GrainOverlay";
 import { Toaster } from "@/components/ui/toast";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  weight: ["700", "900"],
   subsets: ["latin"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  weight: "300",
+  style: "italic",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  weight: ["300", "400"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -64,7 +74,7 @@ export default function RootLayout({
   return (
     <html
       lang="ro"
-      className={`${syne.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
+      className={`${playfair.variable} ${cormorant.variable} ${dmMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-background text-foreground selection:bg-accent selection:text-black">
         <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground">

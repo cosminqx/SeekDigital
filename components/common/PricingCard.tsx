@@ -24,21 +24,21 @@ export default function PricingCard({ tier, price, features, highlighted, cta, h
   return (
     <Card
       className={cn(
-        "flex h-full flex-col transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_1px_#C8FF00]",
+        "flex h-full flex-col transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_1px_#161925]",
         highlighted ? "border-accent bg-white/[0.03]" : "bg-card",
       )}
     >
       <CardHeader className="space-y-4 p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <CardTitle className="text-2xl uppercase tracking-[-0.03em] text-white">{tier}</CardTitle>
+            <CardTitle className="text-2xl uppercase tracking-[-0.03em] text-parchment">{tier}</CardTitle>
             <CardDescription className="mt-2 text-3xl font-bold text-accent">{price}</CardDescription>
           </div>
           {badge ? <Badge variant="accent">{badge}</Badge> : null}
         </div>
       </CardHeader>
       <CardContent className="flex-1 space-y-4 px-6 pb-6">
-        <ul className="space-y-3 text-sm leading-6 text-white">
+        <ul className="space-y-3 text-sm leading-6 text-parchment">
           {features.map((feature) => (
             <li key={feature.label} className="flex items-start gap-3">
               {feature.included ? (
@@ -46,13 +46,13 @@ export default function PricingCard({ tier, price, features, highlighted, cta, h
               ) : (
                 <X className="mt-0.5 h-4 w-4 shrink-0 text-muted" />
               )}
-              <span className={cn(feature.included ? "text-white" : "text-muted")}>{feature.label}</span>
+              <span className={cn(feature.included ? "text-parchment" : "text-muted")}>{feature.label}</span>
             </li>
           ))}
         </ul>
       </CardContent>
       <CardFooter className="px-6 pb-6 pt-0">
-        <Button asChild className={cn("w-full", highlighted && "bg-accent text-black hover:bg-white hover:text-black")}> 
+        <Button asChild className={cn("w-full", highlighted && "bg-accent text-parchment hover:bg-parchment hover:text-accent")}> 
           <Link href={href}>{cta}</Link>
         </Button>
       </CardFooter>
