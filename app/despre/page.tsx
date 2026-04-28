@@ -4,9 +4,14 @@ import AboutPage from "@/components/pages/AboutPage";
 export const metadata: Metadata = {
   title: "Despre",
   description:
-    "Află povestea lui Silviu Chiscareanu și misiunea SEEK DIGITAL din Iași, România.",
+    "Cunoaște echipa SEEK DIGITAL — Silviu Chiscareanu, Podaru Iulia, Lăcătuș Cosmin și Mihalache Tudor. 4 cofondatori din Iași care digitalizează IMM-uri cu rezultate măsurabile.",
   alternates: { canonical: "/despre" },
-  openGraph: { images: ["/images/og-placeholder.svg"] },
+  openGraph: {
+    title: "Despre echipa SEEK DIGITAL",
+    description:
+      "4 cofondatori complementari din Iași: web development, design, marketing și sales — o agenție boutique construită pentru antreprenori locali.",
+    images: ["/images/og-placeholder.svg"],
+  },
   robots: { index: true, follow: true },
 };
 
