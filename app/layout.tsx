@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Syne } from "next/font/google";
+import { Poppins, Syne } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import PageTransition from "@/components/layout/PageTransition";
@@ -14,10 +14,11 @@ const syne = Syne({
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const siteUrl = "https://devbysilviu.ro";
@@ -64,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="ro"
-      className={`${syne.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
+      className={`${syne.variable} ${poppins.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-background text-foreground selection:bg-accent selection:text-black">
         <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground">

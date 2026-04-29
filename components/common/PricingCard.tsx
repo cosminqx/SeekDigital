@@ -24,15 +24,15 @@ export default function PricingCard({ tier, price, features, highlighted, cta, h
   return (
     <Card
       className={cn(
-        "flex h-full flex-col transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_1px_#C8FF00]",
-        highlighted ? "border-accent bg-white/[0.03]" : "bg-card",
+        "flex h-full flex-col transition duration-300 hover:-translate-y-2 hover:glass-shadow-lg",
+        highlighted ? "border-blue-500/50 bg-gradient-to-br from-blue-500/15 to-blue-600/10 shadow-[inset_0_0_20px_rgba(59,130,246,0.1)]" : "glass-effect",
       )}
     >
       <CardHeader className="space-y-4 p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
             <CardTitle className="text-2xl uppercase tracking-[-0.03em] text-white">{tier}</CardTitle>
-            <CardDescription className="mt-2 text-3xl font-bold text-accent">{price}</CardDescription>
+            <CardDescription className="mt-2 text-3xl font-bold text-blue-400">{price}</CardDescription>
           </div>
           {badge ? <Badge variant="accent">{badge}</Badge> : null}
         </div>
@@ -42,7 +42,7 @@ export default function PricingCard({ tier, price, features, highlighted, cta, h
           {features.map((feature) => (
             <li key={feature.label} className="flex items-start gap-3">
               {feature.included ? (
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-blue-400" />
               ) : (
                 <X className="mt-0.5 h-4 w-4 shrink-0 text-muted" />
               )}
@@ -52,7 +52,7 @@ export default function PricingCard({ tier, price, features, highlighted, cta, h
         </ul>
       </CardContent>
       <CardFooter className="px-6 pb-6 pt-0">
-        <Button asChild className={cn("w-full", highlighted && "bg-accent text-black hover:bg-white hover:text-black")}> 
+        <Button asChild className={cn("w-full", highlighted && "bg-blue-600 text-white hover:bg-blue-500 hover:text-white")}> 
           <Link href={href}>{cta}</Link>
         </Button>
       </CardFooter>
