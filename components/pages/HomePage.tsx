@@ -47,20 +47,23 @@ function SplitHeadline({ text }: { text: string }) {
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-blue-400/20">
+      <section className="relative overflow-hidden border-b border-seek">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.15),_transparent_32%),radial-gradient(circle_at_75%_20%,_rgba(30,144,255,0.1),_transparent_26%),radial-gradient(circle_at_50%_80%,_rgba(100,150,255,0.08),_transparent_24%)]" />
         <motion.div
-          className="mesh-blob absolute -left-24 top-16 h-72 w-72 rounded-full bg-blue-500/15 blur-3xl"
+          className="mesh-blob absolute -left-24 top-16 h-72 w-72 rounded-full blur-3xl"
+          style={{ backgroundColor: "rgba(124,58,237,0.15)" }}
           animate={{ x: [0, 32, -18, 0], y: [0, -18, 26, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="mesh-blob mesh-blob-delay absolute right-0 top-24 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl"
+          className="mesh-blob mesh-blob-delay absolute right-0 top-24 h-80 w-80 rounded-full blur-3xl"
+          style={{ backgroundColor: "rgba(124,58,237,0.10)" }}
           animate={{ x: [0, -22, 18, 0], y: [0, 20, -16, 0] }}
           transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="mesh-blob mesh-blob-delay-2 absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"
+          className="mesh-blob mesh-blob-delay-2 absolute bottom-0 left-1/3 h-96 w-96 rounded-full blur-3xl"
+          style={{ backgroundColor: "rgba(79,70,229,0.10)" }}
           animate={{ x: [0, 18, -10, 0], y: [0, -12, 24, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -96,15 +99,15 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div variants={fadeInUp} className="grid gap-4 sm:grid-cols-3">
-                <div className="glass-effect glass-shadow-sm rounded-lg border border-blue-400/20 bg-blue-500/5 p-5">
+                <div className="glass-effect glass-shadow-sm rounded-lg border-seek bg-seek-glass p-5">
                   <AnimatedCounter target={14} prefix="7–" suffix=" zile" />
                   <p className="mt-3 text-sm text-muted">livrare website</p>
                 </div>
-                <div className="glass-effect glass-shadow-sm rounded-lg border border-blue-400/20 bg-blue-500/5 p-5">
+                <div className="glass-effect glass-shadow-sm rounded-lg border-seek bg-seek-glass p-5">
                   <AnimatedCounter target={50} prefix="30–" suffix="%" />
                   <p className="mt-3 text-sm text-muted">prețuri mai mici față de agenții mari</p>
                 </div>
-                <div className="glass-effect glass-shadow-sm rounded-lg border border-blue-400/20 bg-blue-500/5 p-5">
+                <div className="glass-effect glass-shadow-sm rounded-lg border-seek bg-seek-glass p-5">
                   <AnimatedCounter target={100} suffix="%" />
                   <p className="mt-3 text-sm text-muted">ROI măsurabil, garantat prin contract</p>
                 </div>
@@ -112,11 +115,11 @@ export default function HomePage() {
             </div>
 
             <motion.aside variants={fadeInUp} className="space-y-6">
-              <div className="glass-effect glass-shadow-lg rounded-lg border-blue-400/20 p-6">
+              <div className="glass-effect glass-shadow-lg rounded-lg border-seek p-6">
                 <p className="font-display text-xs uppercase tracking-[0.28em] text-accent">Boutique agency</p>
                 <div className="mt-4 space-y-3">
                   <p className="font-display text-2xl font-bold uppercase tracking-[-0.03em] text-white">
-                    <span className="text-blue-400">SEEK</span> DIGITAL
+                    <span className="text-seek-violet">SEEK</span> DIGITAL
                   </p>
                   <p className="text-sm leading-7 text-muted">
                     Lucrăm direct cu fondatorul Silviu Chiscareanu pentru proiecte care cresc în trafic, leads și venit.
@@ -128,7 +131,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="glass-effect glass-shadow-sm rounded-lg border-blue-400/20 p-6">
+              <div className="glass-effect glass-shadow-sm rounded-lg border-seek p-6">
                 <p className="text-xs uppercase tracking-[0.28em] text-muted">Focus</p>
                 <ul className="mt-4 space-y-3 text-sm text-white">
                   {[
@@ -137,7 +140,7 @@ export default function HomePage() {
                     "Automatizări care economisesc timp",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <Check className="mt-0.5 h-4 w-4 text-blue-400" />
+                      <Check className="mt-0.5 h-4 w-4 text-seek-violet" />
                       <span className="text-muted">{item}</span>
                     </li>
                   ))}
@@ -174,13 +177,13 @@ export default function HomePage() {
         </div>
       </RevealSection>
 
-      <RevealSection className="border-y border-blue-400/20 bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
+      <RevealSection className="border-y border-seek bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="De ce SEEK DIGITAL" title="Diferențiatori care contează" subtitle="Nu cumpăra mai multă agendă, cumpără un proces mai bun." />
           <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {differentiators.map((item) => (
-              <div key={item.number} className="relative overflow-hidden glass-effect glass-shadow-md rounded-lg border-blue-400/20 p-8 lg:p-10 transition-all duration-300 hover:glass-shadow-lg">
-                <p className="absolute -left-4 -top-8 select-none font-display text-[clamp(7rem,14vw,9rem)] font-bold uppercase leading-none tracking-[-0.03em] text-blue-400/5">
+              <div key={item.number} className="relative overflow-hidden glass-effect glass-shadow-md rounded-lg border-seek p-8 lg:p-10 transition-all duration-300 hover:glass-shadow-lg">
+                <p className="absolute -left-4 -top-8 select-none font-display text-[clamp(7rem,14vw,9rem)] font-bold uppercase leading-none tracking-[-0.03em]" style={{ color: 'rgba(124,58,237,0.05)' }}>
                   {item.number}
                 </p>
                 <div className="relative z-10 max-w-xl space-y-4">
@@ -219,7 +222,7 @@ export default function HomePage() {
         </div>
       </RevealSection>
 
-      <RevealSection className="border-y border-blue-400/20 bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
+      <RevealSection className="border-y border-seek bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Proces" title="Cum lucrăm" subtitle="Un proces simplu, previzibil și ușor de urmărit de la brief până la lansare." />
           <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-6">
@@ -227,14 +230,14 @@ export default function HomePage() {
               <div
                 key={step.step}
                 className={cn(
-                  "glass-effect glass-shadow-md rounded-lg border-blue-400/20 p-6 transition-all duration-300 hover:glass-shadow-lg",
-                  index === 0 && "border-blue-500/50 bg-blue-500/10 shadow-[inset_0_0_20px_rgba(59,130,246,0.1)]",
+                  "glass-effect glass-shadow-md rounded-lg border-seek p-6 transition-all duration-300 hover:glass-shadow-lg",
+                  index === 0 && "border-seek shadow-[inset_0_0_20px_rgba(124,58,237,0.1)] glass-signal",
                 )}
               >
                 <div
                   className={cn(
                     "inline-flex h-12 w-12 items-center justify-center rounded-full border text-sm font-bold transition-all duration-300",
-                    index === 0 ? "border-blue-500 bg-blue-500/30 text-blue-200" : "border-blue-400/30 text-white bg-blue-500/10",
+                    index === 0 ? "border-seek glass-signal text-seek-plasma bg-[rgba(124,58,237,0.30)]" : "border-seek text-white bg-seek-glass",
                   )}
                 >
                   {step.step}
@@ -248,10 +251,10 @@ export default function HomePage() {
       </RevealSection>
 
       <section className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8 lg:py-28">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-transparent to-blue-500/20 blur-3xl" />
+        <div className="absolute inset-0 blur-3xl" style={{ background: 'linear-gradient(90deg, rgba(79,70,229,0.20) 0%, transparent 50%, rgba(124,58,237,0.18) 100%)' }} />
         <div className="mx-auto flex max-w-7xl flex-col gap-8 relative z-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl space-y-4">
-            <p className="font-display text-xs uppercase tracking-[0.28em] text-blue-400">Call to action</p>
+            <p className="font-display text-xs uppercase tracking-[0.28em] text-seek-violet">Call to action</p>
             <h2 className="font-display text-[clamp(2.5rem,6vw,4rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] text-white">
               Gata să creștem împreună?
             </h2>

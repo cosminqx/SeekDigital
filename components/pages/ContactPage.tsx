@@ -12,7 +12,7 @@ import { contactSchema, type ContactFormValues } from "@/lib/validations";
 import { siteConfig, contactOptions } from "@/lib/site";
 
 const fieldClassName =
-  "w-full glass-effect-sm rounded-lg bg-blue-500/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-muted focus:border-blue-400/60 focus:glass-shadow-sm";
+  "w-full glass-effect-sm rounded-lg bg-seek-glass px-4 py-3 text-sm text-white outline-none transition placeholder:text-muted focus:ring-2 focus:ring-[rgba(124,58,237,0.18)] focus:glass-shadow-sm";
 
 export default function ContactPage() {
   const {
@@ -43,7 +43,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="border-b border-blue-400/20">
+    <div className="border-b border-seek">
       <RevealSection className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
         <SectionHeader
           eyebrow="Contact"
@@ -57,15 +57,15 @@ export default function ContactPage() {
           <Card className="p-6">
             <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">Date de contact</p>
             <div className="mt-6 space-y-4 text-sm text-white">
-              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 transition hover:text-blue-400">
-                <Mail className="h-4 w-4 text-blue-400" /> {siteConfig.email}
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 transition hover:text-seek-violet">
+                <Mail className="h-4 w-4 text-seek-violet" /> {siteConfig.email}
               </a>
-              <a href={siteConfig.whatsapp} className="flex items-center gap-3 transition hover:text-blue-400">
-                <MessageCircle className="h-4 w-4 text-blue-400" /> Scrie-ne pe WhatsApp
+              <a href={siteConfig.whatsapp} className="flex items-center gap-3 transition hover:text-seek-violet">
+                <MessageCircle className="h-4 w-4 text-seek-violet" /> Scrie-ne pe WhatsApp
               </a>
             </div>
-            <div className="mt-6 inline-flex items-center gap-2 glass-effect-sm rounded-lg border-blue-400/20 px-3 py-2 text-xs uppercase tracking-[0.2em] text-muted">
-              <span className="h-2 w-2 rounded-full bg-blue-400" /> Răspundem în maxim 24h
+            <div className="mt-6 inline-flex items-center gap-2 glass-effect-sm rounded-lg border-seek px-3 py-2 text-xs uppercase tracking-[0.2em] text-muted">
+              <span className="h-2 w-2 rounded-full bg-seek-violet" /> Răspundem în maxim 24h
             </div>
           </Card>
 
@@ -82,12 +82,12 @@ export default function ContactPage() {
           </Card>
 
           <Card className="overflow-hidden p-0">
-            <div className="border-b border-blue-400/20 px-6 py-4">
+            <div className="border-b border-seek px-6 py-4">
               <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">Google Maps</p>
             </div>
-            <div className="flex min-h-[280px] items-center justify-center bg-gradient-to-br from-blue-500/10 via-transparent to-blue-600/10 px-6 text-center text-sm text-muted">
+            <div className="flex min-h-[280px] items-center justify-center bg-gradient-to-br from-[rgba(124,58,237,0.10)] via-transparent to-[rgba(79,70,229,0.08)] px-6 text-center text-sm text-muted">
               <div className="max-w-xs space-y-3">
-                <MapPinned className="mx-auto h-8 w-8 text-blue-400" />
+                <MapPinned className="mx-auto h-8 w-8 text-seek-violet" />
                 <p>Iași, România</p>
                 <p>Harta reală poate fi adăugată după configurarea contului Google Maps Embed.</p>
               </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
               <label className="flex items-start gap-3 text-sm text-muted">
                 <input
                   type="checkbox"
-                  className="mt-1 h-4 w-4 rounded-md border border-blue-400/30 bg-blue-500/10 text-blue-500 focus:ring-2 focus:ring-blue-500/50"
+                  className="mt-1 h-4 w-4 rounded-md border border-seek bg-seek-glass text-seek-violet focus:ring-2 focus:ring-[rgba(124,58,237,0.18)]"
                   {...register("consent")}
                 />
                 <span>
@@ -164,8 +164,8 @@ export default function ContactPage() {
                 {isSubmitting ? "Se trimite..." : "Trimite mesajul"}
               </Button>
 
-              <div className="flex items-center gap-3 border-t border-blue-400/20 pt-5 text-xs uppercase tracking-[0.18em] text-muted">
-                <PhoneCall className="h-4 w-4 text-blue-400" />
+              <div className="flex items-center gap-3 border-t border-seek pt-5 text-xs uppercase tracking-[0.18em] text-muted">
+                <PhoneCall className="h-4 w-4 text-seek-violet" />
                 Vei primi răspuns de la SEEK DIGITAL, nu de la un formular automat.
               </div>
             </form>

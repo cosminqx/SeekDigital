@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Syne } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import PageTransition from "@/components/layout/PageTransition";
@@ -14,8 +14,8 @@ const syne = Syne({
   display: "swap",
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
@@ -63,10 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ro"
-      className={`${syne.variable} ${poppins.variable} h-full scroll-smooth antialiased`}
-    >
+    <html lang="ro" className={`${syne.variable} ${inter.variable} h-full scroll-smooth antialiased`}>
       <body className="min-h-full bg-background text-foreground selection:bg-accent selection:text-black">
         <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground">
           <GrainOverlay />
