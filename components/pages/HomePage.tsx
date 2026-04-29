@@ -51,13 +51,13 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.15),_transparent_32%),radial-gradient(circle_at_75%_20%,_rgba(30,144,255,0.1),_transparent_26%),radial-gradient(circle_at_50%_80%,_rgba(100,150,255,0.08),_transparent_24%)]" />
         <motion.div
           className="mesh-blob absolute -left-24 top-16 h-72 w-72 rounded-full blur-3xl"
-          style={{ backgroundColor: "rgba(124,58,237,0.15)" }}
+          style={{ backgroundColor: "rgba(21,22,103,0.15)" }}
           animate={{ x: [0, 32, -18, 0], y: [0, -18, 26, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="mesh-blob mesh-blob-delay absolute right-0 top-24 h-80 w-80 rounded-full blur-3xl"
-          style={{ backgroundColor: "rgba(124,58,237,0.10)" }}
+          style={{ backgroundColor: "rgba(21,22,103,0.10)" }}
           animate={{ x: [0, -22, 18, 0], y: [0, 20, -16, 0] }}
           transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -183,7 +183,7 @@ export default function HomePage() {
           <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {differentiators.map((item) => (
               <div key={item.number} className="relative overflow-hidden glass-effect glass-shadow-md rounded-lg border-seek p-8 lg:p-10 transition-all duration-300 hover:glass-shadow-lg">
-                <p className="absolute -left-4 -top-8 select-none font-display text-[clamp(7rem,14vw,9rem)] font-bold uppercase leading-none tracking-[-0.03em]" style={{ color: 'rgba(124,58,237,0.05)' }}>
+                <p className="absolute -left-4 -top-8 select-none font-display text-[clamp(7rem,14vw,9rem)] font-bold uppercase leading-none tracking-[-0.03em]" style={{ color: 'rgba(21,22,103,0.05)' }}>
                   {item.number}
                 </p>
                 <div className="relative z-10 max-w-xl space-y-4">
@@ -225,19 +225,19 @@ export default function HomePage() {
       <RevealSection className="border-y border-seek bg-surface px-4 py-32 sm:px-6 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Proces" title="Cum lucrăm" subtitle="Un proces simplu, previzibil și ușor de urmărit de la brief până la lansare." />
-          <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-6">
+          <div className="mt-16 work-grid">
             {processSteps.map((step, index) => (
               <div
                 key={step.step}
                 className={cn(
-                  "glass-effect glass-shadow-md rounded-lg border-seek p-6 transition-all duration-300 hover:glass-shadow-lg",
-                  index === 0 && "border-seek shadow-[inset_0_0_20px_rgba(124,58,237,0.1)] glass-signal",
+                  "work-item morph-hover bg-reactive glass-effect glass-shadow-md rounded-lg border-seek p-6 transition-all duration-300",
+                  index === 0 && "border-seek shadow-[inset_0_0_20px_rgba(21,22,103,0.10)] glass-signal",
                 )}
               >
                 <div
                   className={cn(
                     "inline-flex h-12 w-12 items-center justify-center rounded-full border text-sm font-bold transition-all duration-300",
-                    index === 0 ? "border-seek glass-signal text-seek-plasma bg-[rgba(124,58,237,0.30)]" : "border-seek text-white bg-seek-glass",
+                    index === 0 ? "border-seek glass-signal text-seek-plasma bg-[rgba(21,22,103,0.30)]" : "border-seek text-white bg-seek-glass",
                   )}
                 >
                   {step.step}
@@ -251,7 +251,7 @@ export default function HomePage() {
       </RevealSection>
 
       <section className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8 lg:py-28">
-        <div className="absolute inset-0 blur-3xl" style={{ background: 'linear-gradient(90deg, rgba(79,70,229,0.20) 0%, transparent 50%, rgba(124,58,237,0.18) 100%)' }} />
+        <div className="absolute inset-0 blur-3xl" style={{ background: 'linear-gradient(90deg, rgba(79,70,229,0.20) 0%, transparent 50%, rgba(21,22,103,0.18) 100%)' }} />
         <div className="mx-auto flex max-w-7xl flex-col gap-8 relative z-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl space-y-4">
             <p className="font-display text-xs uppercase tracking-[0.28em] text-seek-violet">Call to action</p>

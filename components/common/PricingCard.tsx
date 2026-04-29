@@ -26,7 +26,7 @@ export default function PricingCard({ tier, price, features, highlighted, cta, h
       className={cn(
         "flex h-full flex-col transition duration-300 hover:-translate-y-2 hover:glass-shadow-lg",
         highlighted
-          ? "border-seek glass-signal bg-gradient-to-br from-[rgba(124,58,237,0.12)] to-[rgba(79,70,229,0.08)] shadow-[inset_0_0_20px_rgba(124,58,237,0.08)]"
+          ? "border-seek glass-signal shadow-[inset_0_0_20px_rgba(21,22,103,0.08)]"
           : "glass-effect",
       )}
     >
@@ -54,7 +54,7 @@ export default function PricingCard({ tier, price, features, highlighted, cta, h
         </ul>
       </CardContent>
       <CardFooter className="px-6 pb-6 pt-0">
-        <Button asChild className={cn("w-full", highlighted && "bg-seek-violet text-white hover:bg-[rgba(124,58,237,0.85)]")}> 
+        <Button asChild className={cn("w-full", highlighted && "bg-seek-violet text-white hover:bg-seek-violet-glow")}> 
           <Link href={href}>{cta}</Link>
         </Button>
       </CardFooter>

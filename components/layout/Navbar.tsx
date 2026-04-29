@@ -31,7 +31,7 @@ export default function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-[70] border-b border-transparent transition-all duration-300",
-        isScrolled ? "border-seek glass-effect bg-gradient-to-b from-[rgba(79,70,229,0.05)] to-transparent" : "bg-transparent",
+        isScrolled ? "border-seek glass-effect" : "bg-transparent",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">

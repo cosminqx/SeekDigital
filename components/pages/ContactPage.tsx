@@ -12,7 +12,7 @@ import { contactSchema, type ContactFormValues } from "@/lib/validations";
 import { siteConfig, contactOptions } from "@/lib/site";
 
 const fieldClassName =
-  "w-full glass-effect-sm rounded-lg bg-seek-glass px-4 py-3 text-sm text-white outline-none transition placeholder:text-muted focus:ring-2 focus:ring-[rgba(124,58,237,0.18)] focus:glass-shadow-sm";
+  "w-full glass-effect-sm rounded-lg bg-seek-glass px-4 py-3 text-sm text-white outline-none transition placeholder:text-muted focus:ring-2 focus:ring-[rgba(43,43,143,0.18)] focus:glass-shadow-sm";
 
 export default function ContactPage() {
   const {
@@ -85,7 +85,7 @@ export default function ContactPage() {
             <div className="border-b border-seek px-6 py-4">
               <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">Google Maps</p>
             </div>
-            <div className="flex min-h-[280px] items-center justify-center bg-gradient-to-br from-[rgba(124,58,237,0.10)] via-transparent to-[rgba(79,70,229,0.08)] px-6 text-center text-sm text-muted">
+            <div className="flex min-h-[280px] items-center justify-center glass-signal px-6 text-center text-sm text-muted">
               <div className="max-w-xs space-y-3">
                 <MapPinned className="mx-auto h-8 w-8 text-seek-violet" />
                 <p>Iași, România</p>
@@ -151,7 +151,7 @@ export default function ContactPage() {
               <label className="flex items-start gap-3 text-sm text-muted">
                 <input
                   type="checkbox"
-                  className="mt-1 h-4 w-4 rounded-md border border-seek bg-seek-glass text-seek-violet focus:ring-2 focus:ring-[rgba(124,58,237,0.18)]"
+                  className="mt-1 h-4 w-4 rounded-md border border-seek bg-seek-glass text-seek-violet focus:ring-2 focus:ring-[rgba(43,43,143,0.18)]"
                   {...register("consent")}
                 />
                 <span>

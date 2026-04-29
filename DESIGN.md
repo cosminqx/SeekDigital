@@ -38,6 +38,17 @@ SEEK Digital is not a corporate agency. We're four people who care too much abou
 --seek-ice          #67E8F9    /* data, technical details */
 ```
 
+### Neon / Signal Colors
+
+```
+--seek-violet       #151667    /* primary signal — deep navy/purple */
+--seek-violet-glow  #2B2B8F    /* hover states, active elements */
+--seek-electric     #4F46E5    /* secondary — deep indigo */
+--seek-plasma       #C084FC    /* accent — soft lilac for contrast text */
+--seek-ember        #F472B6    /* warm accent — sparingly, emotionally */
+--seek-ice          #67E8F9    /* data, technical details */
+```
+
 ### Text
 
 ```
@@ -189,7 +200,7 @@ The signature visual language of SEEK Digital. Glass that feels like it's floati
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(124,58,237,0.4), rgba(79,70,229,0.2), rgba(192,132,252,0.3));
+  background: linear-gradient(135deg, rgba(21,22,103,0.4), rgba(79,70,229,0.2), rgba(192,132,252,0.3));
   z-index: -1;
 }
 
