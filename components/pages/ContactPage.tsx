@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, MessageCircle, MapPinned, PhoneCall } from "lucide-react";
+import { Mail, MessageCircle, PhoneCall } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -15,6 +16,7 @@ const fieldClassName =
   "w-full glass-effect-sm rounded-lg bg-seek-glass px-4 py-3 text-sm text-white outline-none transition placeholder:text-muted focus:ring-2 focus:ring-[rgba(43,43,143,0.18)] focus:glass-shadow-sm";
 
 export default function ContactPage() {
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const {
     register,
     handleSubmit,
@@ -33,13 +35,50 @@ export default function ContactPage() {
     },
   });
 
-  const onSubmit = async () => {
-    await new Promise((resolve) => window.setTimeout(resolve, 800));
-    reset();
-    toast({
-      title: "Mesaj trimis",
-      description: "Am primit solicitarea ta și revenim în maximum 24h.",
-    });
+  const onSubmit = async (data: ContactFormValues) => {
+    setSubmitStatus("sending");
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "0cb7c12a-97fe-429a-988c-b946432b7e33");
+      formData.append("name", data.fullName);
+      formData.append("email", data.email);
+      if (data.phone) {
+        formData.append("phone", data.phone);
+      }
+      formData.append("service", data.service);
+      formData.append("budget", data.budget);
+      formData.append("message", data.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        reset();
+        toast({
+          title: "Am primit mail-ul tău",
+          description: "Îți vom răspunde curând cu o propunere personalizată.",
+        });
+        // Reset status after 5 seconds
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      } else {
+        setSubmitStatus("error");
+        toast({
+          title: "Eroare la trimitere",
+          description: "A apărut o problemă. Te rugăm să încerci din nou.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      toast({
+        title: "Eroare la trimitere",
+        description: "A apărut o problemă. Te rugăm să încerci din nou.",
+      });
+    }
   };
 
   return (
@@ -81,18 +120,6 @@ export default function ContactPage() {
             </Button>
           </Card>
 
-          <Card className="overflow-hidden p-0">
-            <div className="border-b border-seek px-6 py-4">
-              <p className="font-display text-xs uppercase tracking-[0.24em] text-accent">Google Maps</p>
-            </div>
-            <div className="flex min-h-[280px] items-center justify-center glass-signal px-6 text-center text-sm text-muted">
-              <div className="max-w-xs space-y-3">
-                <MapPinned className="mx-auto h-8 w-8 text-seek-violet" />
-                <p>Iași, România</p>
-                <p>Harta reală poate fi adăugată după configurarea contului Google Maps Embed.</p>
-              </div>
-            </div>
-          </Card>
         </RevealSection>
 
         <RevealSection>
@@ -160,9 +187,15 @@ export default function ContactPage() {
                 </span>
               </label>
 
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Se trimite..." : "Trimite mesajul"}
+              <Button type="submit" className="w-full" disabled={isSubmitting || submitStatus === "sending"}>
+                {submitStatus === "sending" ? "Se trimite..." : submitStatus === "success" ? "Mesaj trimis!" : "Trimite mesajul"}
               </Button>
+
+              {submitStatus === "success" && (
+                <div className="rounded-lg border border-seek-violet/40 bg-seek-violet/10 p-4 text-sm text-seek-violet">
+                  ✓ Am primit mail-ul tău, iti vom raspunde curand
+                </div>
+              )}
 
               <div className="flex items-center gap-3 border-t border-seek pt-5 text-xs uppercase tracking-[0.18em] text-muted">
                 <PhoneCall className="h-4 w-4 text-seek-violet" />

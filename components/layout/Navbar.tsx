@@ -8,6 +8,8 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
+const headerLinks = navLinks.filter((link) => link.href !== "/contact");
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +44,7 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
+          {headerLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-medium tracking-[0.08em] text-muted transition hover:text-seek-violet">
             
               {link.label}
@@ -92,7 +94,7 @@ export default function Navbar() {
               </div>
               <div className="mt-12 flex flex-1 flex-col justify-between">
                 <div className="space-y-5">
-                  {navLinks.map((link, index) => (
+                  {headerLinks.map((link, index) => (
                     <motion.div
                       key={link.href}
                       initial={{ opacity: 0, x: 20 }}
